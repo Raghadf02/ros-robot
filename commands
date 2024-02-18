@@ -1,0 +1,13 @@
+cd ~
+mkdir -p ros-robot/src
+cd ros-robot/src
+source /opt/ros/hydro/setup.bash
+catkin_init_workspace
+cd ..
+catkin_make
+git clone https://github.com/HumaRobotics/darwin_description.git
+git clone https://github.com/HumaRobotics/darwin_control.git
+git clone https://github.com/HumaRobotics/darwin_gazebo.git
+source devel/setup.bash
+sudo nano ~./bashrc
+roslaunch darwin_gazebo darwin_gazebo.launch
